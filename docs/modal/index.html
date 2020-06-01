@@ -107,23 +107,68 @@
         <div class="page-code">
           <h1 id="modal">Modal</h1>
 
-<div class="pb-16">
-  <button class="ui-button primary js-modal-btn">Modal</button>
-</div>
-<div class="pb-16">
-  <button class="ui-button primary js-alert-btn">Alert</button>
-</div>
-<div class="pb-16">
-  <button class="ui-button primary js-alert-warn">Alert</button>
-</div>
-<div class="pb-16">
-  <button class="ui-button primary js-confirm-btn">Confirm</button>
-</div>
+<h2 id="standard">Standard</h2>
+
+<p><button class="ui-button primary js-modal-btn">Modal</button></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
+  <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">onConfirm</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">modal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">ok</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">m</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Modal</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div class="modal-main"&gt;Modal Content Text .... ... ....&lt;/div&gt;</span><span class="dl">'</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="message">Message</h2>
+
+<p><button class="ui-button primary js-alert-btn">Alert</button></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">();</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">m2</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><button class="ui-button primary js-alert-warn">Alert warn</button></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">();</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">m2</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="confirm">Confirm</h2>
+
+<p><button class="ui-button primary js-confirm-btn">Confirm</button></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">confirm</span><span class="dl">'</span>
+<span class="p">});</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">m3</span><span class="p">.</span><span class="nx">confirm</span><span class="p">({</span>
+    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">提醒</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">desc</span><span class="p">:</span> <span class="dl">'</span><span class="s1">当前积分余额为1，完成当前操作需要消耗20积分</span><span class="dl">'</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
         </div>
         <div class="page-menu-wrap">
           <div class="page-menu">
             <div class="page-need-css" data-tooltip data-text="<p style='white-space: nowrap'>需要使用CSS</p>"></div>
+            
+            <div class="page-need-js" data-tooltip data-text="<p style='white-space: nowrap'>需要使用JavaScript</p>"></div>
             
             <div class="page-menu-list"></div>
           </div>
