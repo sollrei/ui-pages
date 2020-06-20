@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="/ui-pages/dist/ui.css">
     <link rel="stylesheet" href="/ui-pages/css/page.css">
-    
+    <script src="/ui-pages/dist/ui.js"></script>
 </head>
 
 
@@ -54,6 +54,10 @@
     <li class=""><a href="/ui-pages/docs/input/"><span>Input</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/select/"><span>Select</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/range/"><span>Range</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/colorPicker"><span>ColorPicker</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/upload/"><span>Upload</span></a></li>
     
@@ -120,57 +124,114 @@
 
 <p><button class="ui-button primary js-modal-btn">Modal</button></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
-  <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// console.log('open');</span>
-  <span class="p">},</span>
-  <span class="na">onConfirm</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">modal</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// console.log('ok');</span>
-    <span class="nx">modal</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<div class="bd-example" data-example-id="">
+<script>
+  var Modal = ui.Modal;
 
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">m</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
-    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Modal</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div class="modal-main"&gt;Modal Content Text .... ... ....&lt;/div&gt;</span><span class="dl">'</span>
+  var m = new Modal({
+    onOpen: function () {
+      console.log('open');
+    },
+    onConfirm: function (e, modal) {
+      console.log('ok');
+      modal.hide();
+    }
+  });
+
+  document.querySelector('.js-modal-btn').addEventListener('click', function () {
+    m.show({
+      title: 'Modal',
+      content: '<div class="modal-main">Modal Content Text .... ... ....</div>'
+    });
+  });
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Modal</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Modal</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
+    <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">onConfirm</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">modal</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">ok</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">modal</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="p">}</span>
   <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div></div>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-modal-btn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Modal</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div class="modal-main"&gt;Modal Content Text .... ... ....&lt;/div&gt;</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <h2 id="message">Message</h2>
 
-<p><button class="ui-button primary js-alert-btn">Alert</button></p>
+<p><button class="ui-button primary js-alert-btn mr-20">Alert</button> <button class="ui-button primary js-alert-warn">Alert warn</button></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">();</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">m2</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
+<div class="bd-example" data-example-id="">
+<script>
+  var Message = ui.Message;
 
-<p><button class="ui-button primary js-alert-warn">Alert warn</button></p>
+  var m2 = new Message();
+  document.querySelector('.js-alert-btn').addEventListener('click', function () {
+    m2.success('这里是信息提示');
+  });
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">();</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">m2</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
+  document.querySelector('.js-alert-warn').addEventListener('click', function () {
+    m2.warn('这里是信息提示');
+  });
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Message</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Message</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">();</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-alert-btn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m2</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-alert-warn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m2</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">这里是信息提示</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <h2 id="confirm">Confirm</h2>
 
 <p><button class="ui-button primary js-confirm-btn">Confirm</button></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
-  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">confirm</span><span class="dl">'</span>
-<span class="p">});</span>
+<div class="bd-example" data-example-id="">
+<script>
+  var Modal = ui.Modal;
 
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">m3</span><span class="p">.</span><span class="nx">confirm</span><span class="p">({</span>
-    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">提醒</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">desc</span><span class="p">:</span> <span class="dl">'</span><span class="s1">当前积分余额为1，完成当前操作需要消耗20积分</span><span class="dl">'</span>
+  m3 = new Modal({
+    type: 'confirm'
+  });
+
+  document.querySelector('.js-confirm-btn').addEventListener('click', function () {
+    m3.confirm({
+      content: '提醒',
+      desc: '当前积分余额为1，完成当前操作需要消耗20积分'
+    });
+  });
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Modal</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Modal</span><span class="p">;</span>
+
+  <span class="nx">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modal</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">confirm</span><span class="dl">'</span>
   <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div></div>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-confirm-btn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m3</span><span class="p">.</span><span class="nx">confirm</span><span class="p">({</span>
+      <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">提醒</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">desc</span><span class="p">:</span> <span class="dl">'</span><span class="s1">当前积分余额为1，完成当前操作需要消耗20积分</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
         </div>
         <div class="page-menu-wrap">
@@ -187,7 +248,7 @@
   </div>
   <footer></footer>
 
-<script src="/ui-pages/dist/ui.js"></script>
+
 <script src="/ui-pages/assets/main.js"></script>
 </body>
 

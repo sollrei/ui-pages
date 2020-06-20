@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="/ui-pages/dist/ui.css">
     <link rel="stylesheet" href="/ui-pages/css/page.css">
-    
+    <script src="/ui-pages/dist/ui.js"></script>
 </head>
 
 
@@ -54,6 +54,10 @@
     <li class=""><a href="/ui-pages/docs/input/"><span>Input</span></a></li>
     
     <li class="active"><a href="/ui-pages/docs/select/"><span>Select</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/range/"><span>Range</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/colorPicker"><span>ColorPicker</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/upload/"><span>Upload</span></a></li>
     
@@ -115,6 +119,14 @@
         
         <div class="page-code">
           <h1 id="select">Select</h1>
+
+<blockquote>
+  <p>需要调用js  <code class="highlighter-rouge">new Select('.js-select');</code></p>
+</blockquote>
+
+<blockquote>
+  <p>部分配置可以写在初始元素上，也可以单独传参数设置</p>
+</blockquote>
 
 <h2 id="standard">Standard</h2>
 
@@ -288,15 +300,41 @@
 
 <h2 id="javascript">JavaScript</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="nx">selector</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">multiple</span><span class="p">:</span> <span class="p">[</span><span class="nx">boolean</span><span class="p">]</span> <span class="c1">// 多选</span>
-<span class="p">});</span>
+<div class="bd-example" data-example-id="">
+<script>
+  var Select = ui.Select;
+  new Select('.js-select');
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Select</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">;</span>
+  <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
-<span class="c1">// e.g.</span>
-<span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">multiple</span><span class="p">:</span> <span class="kc">true</span>
+<h4 id="settings">Settings</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// selector可以是css选择器，可以是HTMLElement</span>
+<span class="c1">// e.g.   .js-select</span>
+<span class="c1">//        document.querySelector('.js-select')</span>
+<span class="c1">//        document.querySelectorAll('.js-select')</span>
+
+
+<span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="nx">selector</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">placeholder</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+
+  <span class="na">clearable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 可清除</span>
+  <span class="na">multiple</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">// 多选</span>
+  <span class="na">enterable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 可输入</span>
+  <span class="na">max</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>        <span class="c1">// 最多选几个选项</span>
+  <span class="na">checkable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 输出checkbox</span>
+
+  <span class="na">selectFn</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>   <span class="c1">// 选中回调，使用input或select的也可以监听change事件</span>
 <span class="p">});</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p>可能会重构，或者整个重写，目前逻辑比较混乱</p>
+</blockquote>
 
         </div>
         <div class="page-menu-wrap">
@@ -313,7 +351,7 @@
   </div>
   <footer></footer>
 
-<script src="/ui-pages/dist/ui.js"></script>
+
 <script src="/ui-pages/assets/main.js"></script>
 </body>
 

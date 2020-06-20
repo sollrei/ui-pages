@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="/ui-pages/dist/ui.css">
     <link rel="stylesheet" href="/ui-pages/css/page.css">
-    
+    <script src="/ui-pages/dist/ui.js"></script>
 </head>
 
 
@@ -54,6 +54,10 @@
     <li class=""><a href="/ui-pages/docs/input/"><span>Input</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/select/"><span>Select</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/range/"><span>Range</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/colorPicker"><span>ColorPicker</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/upload/"><span>Upload</span></a></li>
     
@@ -159,6 +163,17 @@
   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>页<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<div class="bd-example" data-example-id="">
+<script>
+  var Select = ui.Select;
+  new Select('.js-select');
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Select</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">;</span>
+  <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
 <h2 id="small">Small</h2>
 
 <div class="bd-example" data-example-id="">
@@ -205,7 +220,7 @@
   </div>
   <footer></footer>
 
-<script src="/ui-pages/dist/ui.js"></script>
+
 <script src="/ui-pages/assets/main.js"></script>
 </body>
 

@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="/ui-pages/dist/ui.css">
     <link rel="stylesheet" href="/ui-pages/css/page.css">
-    
+    <script src="/ui-pages/dist/ui.js"></script>
 </head>
 
 
@@ -54,6 +54,10 @@
     <li class=""><a href="/ui-pages/docs/input/"><span>Input</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/select/"><span>Select</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/range/"><span>Range</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/colorPicker"><span>ColorPicker</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/upload/"><span>Upload</span></a></li>
     
@@ -132,16 +136,38 @@
 
 <h4 id="javascript">JavaScript</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-popper</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
-  
-  <span class="k">new</span> <span class="nx">Popper</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center top</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">内容部分</span><span class="dl">'</span>
-  <span class="p">});</span>
-<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="bd-example" data-example-id="">
+<script>
+  var Popper = ui.Popper;
+  var btn = document.querySelector('.js-popper');
+
+  if (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      
+      new Popper(btn, {
+        position: 'center top',
+        content: '内容部分'
+      });
+    }, false);
+  }
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Popper</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Popper</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-popper</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">btn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+      
+      <span class="k">new</span> <span class="nx">Popper</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center top</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">内容部分</span><span class="dl">'</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <h2 id="tooltip">Tooltip</h2>
 
@@ -152,8 +178,16 @@
 
 <h4 id="javascript-1">JavaScript</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Tooltip</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-tooltip]</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="bd-example" data-example-id="">
+<script>
+  var Tooltip = ui.Tooltip;
+  new Tooltip('[data-tooltip]');
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Tooltip</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Tooltip</span><span class="p">;</span>
+  <span class="k">new</span> <span class="nx">Tooltip</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-tooltip]</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
         </div>
         <div class="page-menu-wrap">
@@ -170,7 +204,7 @@
   </div>
   <footer></footer>
 
-<script src="/ui-pages/dist/ui.js"></script>
+
 <script src="/ui-pages/assets/main.js"></script>
 </body>
 

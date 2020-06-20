@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="/ui-pages/dist/ui.css">
     <link rel="stylesheet" href="/ui-pages/css/page.css">
-    
+    <script src="/ui-pages/dist/ui.js"></script>
 </head>
 
 
@@ -54,6 +54,10 @@
     <li class=""><a href="/ui-pages/docs/input/"><span>Input</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/select/"><span>Select</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/range/"><span>Range</span></a></li>
+    
+    <li class=""><a href="/ui-pages/docs/colorPicker"><span>ColorPicker</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/upload/"><span>Upload</span></a></li>
     
@@ -201,18 +205,39 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">Tab</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ui-tab-wrap</span><span class="dl">'</span><span class="p">);</span>
+<div class="bd-example" data-example-id="">
+<script>
+  var Tab = ui.Tab;
+  Tab('.ui-tab-wrap', {
+    navSelector: '.tab-itm',
+    conSelector: '.tab-content',
+    navActive: 'active',
+    conActive: 'show',
+    // 以上是默认配置
 
-  <span class="c1">// or</span>
-  <span class="kd">const</span> <span class="nx">wrap</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ui-tab-wrap</span><span class="dl">'</span><span class="p">);</span>
-  <span class="nx">Tab</span><span class="p">(</span><span class="nx">wrap</span><span class="p">,</span> <span class="p">{</span>
+    onChange(index, cb) {
+      console.log(index)
+      cb();
+    }
+  });
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Tab</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Tab</span><span class="p">;</span>
+  <span class="nx">Tab</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ui-tab-wrap</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">navSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.tab-itm</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">conSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.tab-content</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">navActive</span><span class="p">:</span> <span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">conActive</span><span class="p">:</span> <span class="dl">'</span><span class="s1">show</span><span class="dl">'</span><span class="p">,</span>
-    <span class="nx">onChange</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="p">})</span>
-</code></pre></div></div>
+    <span class="c1">// 以上是默认配置</span>
+
+    <span class="nx">onChange</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+      <span class="nx">cb</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
 
         </div>
         <div class="page-menu-wrap">
@@ -229,7 +254,7 @@
   </div>
   <footer></footer>
 
-<script src="/ui-pages/dist/ui.js"></script>
+
 <script src="/ui-pages/assets/main.js"></script>
 </body>
 
