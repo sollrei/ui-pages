@@ -126,12 +126,12 @@
 
 <div class="bd-example" data-example-id="">
 <div class="ui-upload-img" id="upload-demo">
-  <label class="trigger"><i class="iconfont icon-plus"></i><input type="file" accept=".jpg,.png,.jpeg" /></label>
+  <label class="trigger"><i class="iconfont icon-plus"></i><input type="file" /></label>
   <div class="image hidden"></div>
 </div>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-img"</span> <span class="na">id=</span><span class="s">"upload-demo"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-plus"</span><span class="nt">&gt;&lt;/i&gt;&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">accept=</span><span class="s">".jpg,.png,.jpeg"</span><span class="nt">&gt;&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-plus"</span><span class="nt">&gt;&lt;/i&gt;&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;&lt;/label&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image hidden"</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -179,7 +179,7 @@ var up = UploadHelper('#upload-demo', {
 <div class="bd-example" data-example-id="">
 <div class="ui-upload-multiple" data-drag="" id="upload-multi">
   <label class="trigger">
-    <input type="file" multiple="" accept="image/*" />
+    <input type="file" multiple="" />
     <i class="iconfont icon-upload"></i>
     <div class="mt-20">点击或将文件拖拽到这里上传，最大支持20MB文件</div>
   </label>
@@ -188,7 +188,7 @@ var up = UploadHelper('#upload-demo', {
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-multiple"</span> <span class="na">data-drag</span> <span class="na">id=</span><span class="s">"upload-multi"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">multiple</span> <span class="na">accept=</span><span class="s">"image/*"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
     <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-upload"</span><span class="nt">&gt;&lt;/i&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt-20"</span><span class="nt">&gt;</span>点击或将文件拖拽到这里上传，最大支持20MB文件<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/label&gt;</span>
