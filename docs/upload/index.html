@@ -31,7 +31,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Base</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Base</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/typography/"><span>Typography</span></a></li>
@@ -42,7 +42,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Form</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Form</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/button/"><span>Button</span></a></li>
@@ -65,7 +65,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Data</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Data</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/pagination/"><span>Pagination</span></a></li>
@@ -82,7 +82,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Navigation</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Navigation</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/crumbs/"><span>Crumbs</span></a></li>
@@ -99,7 +99,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Notice</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Notice</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/alert/"><span>Alert</span></a></li>
@@ -118,17 +118,26 @@
         <div class="page-code">
           <h1 id="upload">Upload</h1>
 
+<blockquote>
+  <p>IE10+</p>
+</blockquote>
+
+<h2 id="single-upload">Single Upload</h2>
+
 <div class="bd-example" data-example-id="">
-<div class="ui-upload-img" id="upload-demo" style="width: 98px;height: 98px;">
+<div class="ui-upload-img" id="upload-demo">
   <label class="trigger"><i class="iconfont icon-plus"></i><input type="file" /></label>
   <div class="image hidden"></div>
 </div>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-img"</span> <span class="na">id=</span><span class="s">"upload-demo"</span> <span class="na">style=</span><span class="s">"width: 98px;height: 98px;"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-img"</span> <span class="na">id=</span><span class="s">"upload-demo"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-plus"</span><span class="nt">&gt;&lt;/i&gt;&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;&lt;/label&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image hidden"</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<h3 id="javascript">javascript</h3>
+
+<div class="bd-example" data-example-id="">
 <script>
 var UploadHelper = ui.UploadHelper;
 var up = UploadHelper('#upload-demo', {
@@ -137,22 +146,23 @@ var up = UploadHelper('#upload-demo', {
     up.createSingleDom(data.data);
   }
 });
-console.log(up)
 </script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">UploadHelper</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">UploadHelper</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">up</span> <span class="o">=</span> <span class="nx">UploadHelper</span><span class="p">(</span><span class="dl">'</span><span class="s1">#upload-demo</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.cooode.xyz/api/upload</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">success</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">up</span><span class="p">.</span><span class="nx">createSingleDom</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
-<div class="ui-upload-img" style="width: 98px;height: 98px;">
-  <label class="trigger hidden"><i class="iconfont icon-plus"></i><input type="file" /></label>
-  <div class="image">
-    <input type="hidden" name="file" value="https://picsum.photos/id/237/300/300" />
-    <img src="https://picsum.photos/id/217/300/300" />
-    <div class="option">
-      <a href="javascript:;" class="js-change">替换</a><a href="javascript:;" class="js-clean">清除</a>
-    </div>
-  </div>
-</div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-img"</span> <span class="na">style=</span><span class="s">"width: 98px;height: 98px;"</span><span class="nt">&gt;</span>
+<blockquote>
+  <p>默认有已上传的图片时的html结构</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-img"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger hidden"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-plus"</span><span class="nt">&gt;&lt;/i&gt;&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;&lt;/label&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">value=</span><span class="s">"https://picsum.photos/id/237/300/300"</span><span class="nt">&gt;</span>
@@ -161,24 +171,232 @@ console.log(up)
       <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span> <span class="na">class=</span><span class="s">"js-change"</span><span class="nt">&gt;</span>替换<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span> <span class="na">class=</span><span class="s">"js-clean"</span><span class="nt">&gt;</span>清除<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="multi-upload">Multi Upload</h2>
 
 <div class="bd-example" data-example-id="">
-<div class="ui-upload-multiple" data-drag="">
+<div class="ui-upload-multiple" data-drag="" id="upload-multi">
   <label class="trigger">
-    <input type="file" multiple="" accept=".csv" />
+    <input type="file" multiple="" />
     <i class="iconfont icon-upload"></i>
-    <div class="mt-20">点击或将文件拖拽到这里上传，最大支持20MB文件，支持扩展名：.csv</div>
+    <div class="mt-20">点击或将文件拖拽到这里上传，最大支持20MB文件</div>
   </label>
 </div>
+<div class="js-progress"></div>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-multiple"</span> <span class="na">data-drag</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-upload-multiple"</span> <span class="na">data-drag</span> <span class="na">id=</span><span class="s">"upload-multi"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">multiple</span> <span class="na">accept=</span><span class="s">".csv"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
     <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"iconfont icon-upload"</span><span class="nt">&gt;&lt;/i&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt-20"</span><span class="nt">&gt;</span>点击或将文件拖拽到这里上传，最大支持20MB文件，支持扩展名：.csv<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt-20"</span><span class="nt">&gt;</span>点击或将文件拖拽到这里上传，最大支持20MB文件<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"js-progress"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="javascript-1">javascript</h3>
+
+<div class="bd-example" data-example-id="">
+<script>
+var UploadHelper = ui.UploadHelper;
+var wrap = document.querySelector('.js-progress');
+
+UploadHelper('#upload-multi', {
+  url: 'https://api.cooode.xyz/api/upload',
+  start() {
+    var item = this;
+    wrap.appendChild(UploadHelper.createProgress(item));
+
+    document.querySelector('#' + item.id + ' .cancel').addEventListener('click', function () {
+      item.abort();
+    });
+    
+    return true;
+  },
+  progress(pro) {
+    document.querySelector('#' + this.id + ' .bar').style.width = pro + '%';
+  },
+  success(data) {
+    if (data.code === 200) {
+      document.querySelector('#' + this.id + ' .cancel').classList.add('hidden');
+    }
+  }
+});
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">UploadHelper</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">UploadHelper</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">wrap</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-progress</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">UploadHelper</span><span class="p">(</span><span class="dl">'</span><span class="s1">#upload-multi</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.cooode.xyz/api/upload</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">wrap</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">UploadHelper</span><span class="p">.</span><span class="nx">createProgress</span><span class="p">(</span><span class="nx">item</span><span class="p">));</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> .cancel</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">abort</span><span class="p">();</span>
+    <span class="p">});</span>
+    
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">progress</span><span class="p">(</span><span class="nx">pro</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> .bar</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">pro</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">%</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">success</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> .cancel</span><span class="dl">'</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+<h2 id="config">Config</h2>
+
+<blockquote>
+  <p>UploadHelper是对Upload做了一个很简单的封装</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Upload</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Upload</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[type="file"]</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// {HTMLInputElement} input</span>
+  <span class="k">new</span> <span class="nx">Upload</span><span class="p">(</span><span class="nx">uploadUrl</span><span class="p">,</span> <span class="nx">input</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">files</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// input.files，即可以input参数传null，直接把files对象传过来</span>
+    <span class="na">limit</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 多文件上传一次添加的数量，0为无限制</span>
+    <span class="na">fileType</span><span class="p">:</span> <span class="p">[],</span> <span class="c1">// ['.jpeg', '.png', '.gif']</span>
+    <span class="na">fileName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 请求url时的文件name值</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">json</span><span class="dl">'</span><span class="p">,</span>
+    
+    <span class="na">beforeInit</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+    <span class="c1">// 函数见下表</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<blockquote>
+  <p>uploadContext是作为this的值使用，不是具体的参数，可能会调整</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>函数</th>
+      <th>默认值</th>
+      <th>参数</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>beforeInit</strong></td>
+      <td>null</td>
+      <td>callback</td>
+      <td>整个上传初始化之前，函数中调用callback(true)会继续上传流程，否则结束</td>
+    </tr>
+    <tr>
+      <td><strong>init</strong></td>
+      <td>null</td>
+      <td>this: uploadContext</td>
+      <td>初始化上传文件数组，state变为0: init</td>
+    </tr>
+    <tr>
+      <td><strong>start</strong></td>
+      <td>function(){ return true; }</td>
+      <td>this: uploadContext</td>
+      <td>文件通过类型和大小的验证</td>
+    </tr>
+    <tr>
+      <td><strong>beforeUploadStart</strong></td>
+      <td>null</td>
+      <td>callback</td>
+      <td>文件上传开始前，函数中调用callback(true)会继续上传，否则结束</td>
+    </tr>
+    <tr>
+      <td><strong>beforeUpload</strong></td>
+      <td>null</td>
+      <td>this: uploadContext, uploadFileIndex, callback(next, data)</td>
+      <td>单个文件上传开始前, 函数中调用callback(true)会继续上传，data会添加到当前文件上传的ajax请求中</td>
+    </tr>
+    <tr>
+      <td><strong>progress</strong></td>
+      <td>null</td>
+      <td>this: uploadContext, progress</td>
+      <td>上传进度</td>
+    </tr>
+    <tr>
+      <td><strong>success</strong></td>
+      <td>null</td>
+      <td>this: uploadContext, responseData</td>
+      <td>ajax上传有返回数据</td>
+    </tr>
+    <tr>
+      <td><strong>error</strong></td>
+      <td>null</td>
+      <td>this: uploadContext, errorObject</td>
+      <td>错误, 例如文件不存在等内部错误，文件扩展名不符，ajax请求错误，返回数据错误（例如dataType:json,但是格式不是json）</td>
+    </tr>
+    <tr>
+      <td><strong>cancel</strong></td>
+      <td>null</td>
+      <td>this: uploadContext</td>
+      <td>取消上传</td>
+    </tr>
+    <tr>
+      <td><strong>complete</strong></td>
+      <td>null</td>
+      <td>this: uploadContext, status</td>
+      <td>单个文件的上传流程结束，success，error，cancel后都会触发</td>
+    </tr>
+    <tr>
+      <td><strong>finish</strong></td>
+      <td>null</td>
+      <td>uploadContexts</td>
+      <td>所有文件的上传流程结束（多文件上传）</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="mt-20"></div>
+
+<h3 id="uploadcontext对象属性">uploadContext对象属性</h3>
+
+<blockquote>
+  <p>uploadContexts为所有uploadContext对象组成的数组</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>index</strong></td>
+      <td>文件index</td>
+    </tr>
+    <tr>
+      <td><strong>id</strong></td>
+      <td>文件唯一性标识</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>状态，可能的值：init/uploading/success/error/cancel</td>
+    </tr>
+    <tr>
+      <td><strong>file</strong></td>
+      <td>file对象</td>
+    </tr>
+    <tr>
+      <td><strong>cancel</strong></td>
+      <td>函数，调用可取消该文件的上传</td>
+    </tr>
+  </tbody>
+</table>
 
 
         </div>

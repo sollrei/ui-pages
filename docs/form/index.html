@@ -31,7 +31,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Base</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Base</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/typography/"><span>Typography</span></a></li>
@@ -42,7 +42,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Form</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Form</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/button/"><span>Button</span></a></li>
@@ -65,7 +65,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Data</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Data</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/pagination/"><span>Pagination</span></a></li>
@@ -82,7 +82,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Navigation</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Navigation</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/crumbs/"><span>Crumbs</span></a></li>
@@ -99,7 +99,7 @@
   
   
   
-  <h4 class="pl-12 mt-8 ft-gray">Notice</h4>
+  <!-- <h4 class="pl-16 mt-8 ft-gray">Notice</h4> -->
   <ul class="ft-content">
     
     <li class=""><a href="/ui-pages/docs/alert/"><span>Alert</span></a></li>
@@ -118,75 +118,232 @@
         <div class="page-code">
           <h1 id="form">Form</h1>
 
-<h2 id="form-1">Form</h2>
-
 <form action="https://api.cooode.xyz/api2/star-success-demo" method="post" class="ui-form" autocomplete="off">
-    <div class="form-group">
-      <div class="form-label">邮箱：</div>
-      <div class="form-con">
-        <div class="ui-control-wrap">
-          <input type="text" class="ui-form-control v-item" data-rules="required|email" data-msgs="请填写|格式错误" name="name" placeholder="Enter" />
-        </div>
+  <div class="form-group">
+    <div class="form-label">required：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="required" name="required" placeholder="required" />
       </div>
     </div>
-    <div class="form-group">
-      <div class="form-label">多行输入：</div>
+  </div>
+  <div class="form-group">
+      <div class="form-label">Select：</div>
       <div class="form-con">
         <div class="ui-control-wrap">
-          <div class="ui-enter-count">
-            <textarea rows="4" class="ui-form-control" maxlength="200" placeholder="Enter"></textarea>
-            <span class="count">0/200</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-label">下拉选择：</div>
-      <div class="form-con">
-        <div class="ui-control-wrap">
-          <select name="direct" class="js-select ui-select ui-form-control">
-            <option value="1">Option1</option>
-            <option value="2">Option2</option>
+          <select name="select" class="js-select ui-select ui-form-control v-item" data-rules="required">
+            <option value="">请选择</option>
+            <option value="1">选项1</option>
+            <option value="2">选项2</option>
           </select>
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <div class="form-label">单选：</div>
-      <div class="form-con">
-        <div class="ui-control-wrap">
-          <label class="ui-radio mr-24">
-            <input type="radio" name="type" value="1" checked="" />
-            <i class="iconfont"></i>
-            <span>选项1</span>
-          </label>
-          <label class="ui-radio mr-24">
-            <input type="radio" name="type" value="2" />
-            <i class="iconfont"></i>
-            <span>选项2</span>
-          </label>
-          <label class="ui-radio mr-24">
-            <input type="radio" name="type" value="3" />
-            <i class="iconfont"></i>
-            <span>选项3</span>
-          </label>
-        </div>
+  <div class="form-group">
+    <div class="form-label">邮箱：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="email" name="email" placeholder="email" />
       </div>
     </div>
-    <div class="form-group">
-      <div class="form-label"></div>
-      <div class="form-con ui-row">
-        <button class="ui-button primary mr-16" type="submit">保存</button>
-        <button class="ui-button" type="reset">重置</button>
+  </div>
+  <div class="form-group">
+    <div class="form-label">相同：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="same(email)" name="same" placeholder="same(email)" />
       </div>
     </div>
-  </form>
+  </div>
+  <div class="form-group">
+    <div class="form-label">相异：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="diff(email)" name="diff" placeholder="diff(email)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">手机：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="mobile" name="mobile" placeholder="mobile" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">中文：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="chinese" name="chinese" placeholder="chinese" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">数字：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="number" name="number" placeholder="number" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">大于某个数：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="gtnum(10)" name="gtnum" placeholder="gtnum(10)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">大于等于某数：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="gtenum(10)" name="gtenum" placeholder="gtenum(10)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">小于某数：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="ltnum(10)" name="ltnum" placeholder="ltnum(10)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">小于等于某数：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="ltenum(10)" name="ltenum" placeholder="ltenum(10)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">English：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="english" data-msgs="" name="english" placeholder="english" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">idCard：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="idCard" data-msgs="" name="idCard" placeholder="idCard" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">price：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="price" data-msgs="" name="price" placeholder="price" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">qq：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="qq" data-msgs="" name="qq" placeholder="qq" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">weChat：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="weChat" data-msgs="" name="weChat" placeholder="weChat" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">tel：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="tel" data-msgs="" name="tel" placeholder="tel" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">time：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="time" data-msgs="" name="time" placeholder="time" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">passport：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="passport" data-msgs="" name="passport" placeholder="passport" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">url：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="url" data-msgs="" name="url" placeholder="url" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">password：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="password" data-msgs="" name="password" placeholder="password" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">not：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control v-item" data-rules="not(1)" data-msgs="" name="not" placeholder="not(1)" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">限制数量多选：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <label class="ui-checkbox"><input type="checkbox" name="checkmin" value="1" class="v-item" data-rules="min(2)" data-msgs="最少选两项" /><i class="iconfont"></i><span>选项1</span></label>
+        <label class="ui-checkbox"><input type="checkbox" name="checkmin" value="2" class="v-item" /><i class="iconfont"></i><span>选项2</span></label>
+        <label class="ui-checkbox"><input type="checkbox" name="checkmin" value="3" class="v-item" /><i class="iconfont"></i><span>选项3</span></label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">限制数量多选：</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <label class="ui-checkbox"><input type="checkbox" name="check" value="1" class="v-item" data-rules="max(2)" data-msgs="最多选两项" /><i class="iconfont"></i><span>选项1</span></label>
+        <label class="ui-checkbox"><input type="checkbox" name="check" value="2" class="v-item" /><i class="iconfont"></i><span>选项2</span></label>
+        <label class="ui-checkbox"><input type="checkbox" name="check" value="3" class="v-item" /><i class="iconfont"></i><span>选项3</span></label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label"></div>
+    <div class="form-con ui-row">
+      <button class="ui-button primary mr-16" type="submit">保存</button>
+      <button class="ui-button" type="reset">重置</button>
+    </div>
+  </div>
+</form>
 
 <h2 id="javascript">JavaScript</h2>
 
 <div class="bd-example" data-example-id="">
 <script>
 var Validator = ui.Validator;
+var Select = ui.Select;
+
+new Select('.js-select');
 
 new Validator('.ui-form', function () {
   alert('success');
@@ -195,6 +352,9 @@ new Validator('.ui-form', function () {
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
 <span class="kd">var</span> <span class="nx">Validator</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Validator</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">Select</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">;</span>
+
+<span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ui-form</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">);</span>
@@ -203,9 +363,166 @@ new Validator('.ui-form', function () {
 
 <h2 id="validator">Validator</h2>
 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
+<span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">option</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
+<span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">fields</span><span class="p">,</span> <span class="nx">option</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>form</strong></td>
+      <td>表单元素</td>
+    </tr>
+    <tr>
+      <td><strong>option</strong></td>
+      <td>配置，可选参数</td>
+    </tr>
+    <tr>
+      <td><strong>fields</strong></td>
+      <td>验证项，数组，可选参数</td>
+    </tr>
+    <tr>
+      <td><strong>successCallback</strong></td>
+      <td>表单验证通过回调</td>
+    </tr>
+    <tr>
+      <td><strong>errorCallback</strong></td>
+      <td>验证没通过的回调，可选参数</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>配置项</th>
+      <th>default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>wrapSelector</strong></td>
+      <td>.ui-control-wrap</td>
+      <td>相对定位元素，用于添加error样式和提示元素（绝对定位）</td>
+    </tr>
+    <tr>
+      <td><strong>validSelector</strong></td>
+      <td>.v-item</td>
+      <td>对该selector查找到的字段添加验证</td>
+    </tr>
+    <tr>
+      <td><strong>errorClass</strong></td>
+      <td>error</td>
+      <td>错误样式（添加到input和warpClass元素）</td>
+    </tr>
+    <tr>
+      <td><strong>successClass</strong></td>
+      <td>success</td>
+      <td>验证成功</td>
+    </tr>
+    <tr>
+      <td><strong>loadClass</strong></td>
+      <td>loading</td>
+      <td>远程验证中样式（添加到input和warpClass元素）</td>
+    </tr>
+    <tr>
+      <td><strong>separator</strong></td>
+      <td><code class="highlighter-rouge">|</code></td>
+      <td>rules和msgs分隔符</td>
+    </tr>
+    <tr>
+      <td><strong>realTime</strong></td>
+      <td>true</td>
+      <td>字段失去焦点时验证，如果是false就只在提交时验证</td>
+    </tr>
+    <tr>
+      <td><strong>shouldFresh</strong></td>
+      <td>false</td>
+      <td>如果表单项会动态修改，可以设为true，提交时会清空之前的数据并重新验证</td>
+    </tr>
+    <tr>
+      <td><strong>remoteLoading</strong></td>
+      <td>false</td>
+      <td>远程验证中显示loading样式</td>
+    </tr>
+    <tr>
+      <td><strong>scrollToError</strong></td>
+      <td>false</td>
+      <td>滚动到错误位置</td>
+    </tr>
+    <tr>
+      <td><strong>fetchSuccess</strong></td>
+      <td><code class="highlighter-rouge">res =&gt; res.code === 200</code></td>
+      <td>判断远程验证通过</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>验证项</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>name</strong></td>
+      <td>string</td>
+      <td>字段name</td>
+    </tr>
+    <tr>
+      <td><strong>rules</strong></td>
+      <td>string</td>
+      <td>规则，例如 <code class="highlighter-rouge">rules: 'required|email'</code></td>
+    </tr>
+    <tr>
+      <td><strong>msgs</strong></td>
+      <td>string</td>
+      <td>错误提示信息，例如 <code class="highlighter-rouge">msgs: '请填写邮箱|邮箱格式不正确'</code></td>
+    </tr>
+    <tr>
+      <td><strong>fn</strong></td>
+      <td>function</td>
+      <td>非必须，字段验证后执行，但是不会中断验证过程，参数为1.validator实例</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>cleanTips</strong></td>
+      <td>清除错误提示样式</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="在表单元素上添加验证规则">在表单元素上添加验证规则</h3>
+
+<ul class="page-ul">
+  <li>data-rules上有remote(远程验证)时需要把remote放在最后</li>
+  <li>对checkbox和radio类型的需要在每个input上加v-item，但是rules和msg只用写第一个上面</li>
+  <li>name值为form中指定字段名称</li>
+</ul>
+
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"v-item"</span> <span class="na">data-rules=</span><span class="s">"rule1|rule2|..."</span> <span class="na">data-msgs=</span><span class="s">"msg1|msg2|..."</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
-<div class="mb-20">name值为form中指定字段名称</div>
 
 <table>
   <thead>
@@ -216,63 +533,64 @@ new Validator('.ui-form', function () {
   </thead>
   <tbody>
     <tr>
-      <td>email</td>
+      <td><strong>email</strong></td>
       <td>邮箱</td>
     </tr>
     <tr>
-      <td>chinese</td>
+      <td><strong>chinese</strong></td>
       <td>中文</td>
     </tr>
     <tr>
-      <td>url</td>
+      <td><strong>url</strong></td>
       <td>地址</td>
     </tr>
     <tr>
-      <td>mobile</td>
+      <td><strong>mobile</strong></td>
       <td>手机号</td>
     </tr>
     <tr>
-      <td>phone</td>
+      <td><strong>phone</strong></td>
       <td>手机号，建议用mobile</td>
     </tr>
     <tr>
-      <td>number</td>
+      <td><strong>number</strong></td>
       <td>数字</td>
     </tr>
     <tr>
-      <td>not</td>
+      <td><strong>not</strong></td>
       <td>非</td>
     </tr>
     <tr>
-      <td>remote(url, name[ajaxName])</td>
+      <td><strong>remote(url, name[ajaxName])</strong></td>
       <td>远程验证</td>
     </tr>
     <tr>
-      <td>same(name)</td>
+      <td><strong>same(name)</strong></td>
       <td>相同</td>
     </tr>
     <tr>
-      <td>reg(regRule)</td>
+      <td><strong>reg(regRule)</strong></td>
       <td>正则，因为用了竖线做了分隔符，所以规则中不能用竖线</td>
     </tr>
     <tr>
-      <td>gt(name)</td>
+      <td><strong>gt(name)</strong></td>
       <td>大于指定字段值（数字）</td>
     </tr>
     <tr>
-      <td>gte(name)</td>
+      <td><strong>gte(name)</strong></td>
       <td>大于等于指定字段值（数字）</td>
     </tr>
     <tr>
-      <td>gtnum(number)</td>
+      <td><strong>gtnum(number)</strong></td>
       <td>大于number值</td>
     </tr>
     <tr>
-      <td>gtenum(number)</td>
+      <td><strong>gtenum(number)</strong></td>
       <td>大于等于number值</td>
     </tr>
   </tbody>
 </table>
+
 
         </div>
         <div class="page-menu-wrap">
