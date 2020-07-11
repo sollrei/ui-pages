@@ -122,7 +122,29 @@
         <div class="page-code">
           <h1 id="form">Form</h1>
 
-<form action="https://api.cooode.xyz/api2/star-success-demo" method="post" class="ui-form" autocomplete="off">
+<form class="ui-form" style="width: 500px">
+  <div class="form-group line">
+    <div class="form-label">email</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control transparent" placeholder="email" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group line">
+    <div class="form-label">name</div>
+    <div class="form-con">
+      <div class="ui-control-wrap">
+        <input type="text" class="ui-form-control transparent" placeholder="name" />
+      </div>
+    </div>
+  </div>
+  
+</form>
+
+<h2 id="validator">Validator</h2>
+
+<form action="https://api.cooode.xyz/api2/star-success-demo" method="post" class="ui-form js-form" autocomplete="off">
   <div class="form-group">
     <div class="form-label">required：</div>
     <div class="form-con">
@@ -349,7 +371,7 @@ var Select = ui.Select;
 
 new Select('.js-select');
 
-new Validator('.ui-form', function () {
+new Validator('.js-form', function () {
   alert('success');
 });
 </script>
@@ -360,12 +382,10 @@ new Validator('.ui-form', function () {
 
 <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ui-form</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-form</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
-
-<h2 id="validator">Validator</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
 <span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">option</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
