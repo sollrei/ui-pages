@@ -257,10 +257,10 @@
   l = new Layer({
     position: 'bottom',  // default: right
     width: '100%', // default: 640
-    onOpen() {
+    onOpen: function () {
       console.log('open')
     },
-    onClose() {
+    onClose: function() {
       console.log('close')
     }
   });
@@ -279,10 +279,10 @@
   <span class="nx">l</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Layer</span><span class="p">({</span>
     <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bottom</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// default: right</span>
     <span class="na">width</span><span class="p">:</span> <span class="dl">'</span><span class="s1">100%</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default: 640</span>
-    <span class="nx">onOpen</span><span class="p">()</span> <span class="p">{</span>
+    <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">},</span>
-    <span class="nx">onClose</span><span class="p">()</span> <span class="p">{</span>
+    <span class="na">onClose</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">});</span>
