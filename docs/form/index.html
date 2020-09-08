@@ -567,12 +567,20 @@ new Validator('.js-form', function () {
   </thead>
   <tbody>
     <tr>
+      <td><strong>required</strong></td>
+      <td>必填</td>
+    </tr>
+    <tr>
       <td><strong>email</strong></td>
       <td>邮箱</td>
     </tr>
     <tr>
       <td><strong>chinese</strong></td>
       <td>中文</td>
+    </tr>
+    <tr>
+      <td><strong>english</strong></td>
+      <td>英文</td>
     </tr>
     <tr>
       <td><strong>url</strong></td>
@@ -587,12 +595,40 @@ new Validator('.js-form', function () {
       <td>手机号，建议用mobile</td>
     </tr>
     <tr>
-      <td><strong>number</strong></td>
-      <td>数字</td>
+      <td><strong>tel</strong></td>
+      <td>座机</td>
+    </tr>
+    <tr>
+      <td><strong>qq</strong></td>
+      <td>qq</td>
+    </tr>
+    <tr>
+      <td><strong>ip</strong></td>
+      <td>ip</td>
+    </tr>
+    <tr>
+      <td><strong>idCard</strong></td>
+      <td>身份证</td>
+    </tr>
+    <tr>
+      <td><strong>passport</strong></td>
+      <td>护照</td>
     </tr>
     <tr>
       <td><strong>not</strong></td>
       <td>非</td>
+    </tr>
+    <tr>
+      <td><strong>or</strong></td>
+      <td>或,例or(email,mobile)</td>
+    </tr>
+    <tr>
+      <td><strong>int</strong></td>
+      <td>正整数</td>
+    </tr>
+    <tr>
+      <td><strong>number</strong></td>
+      <td>数字</td>
     </tr>
     <tr>
       <td><strong>remote(url, name[ajaxName])</strong></td>
@@ -600,7 +636,7 @@ new Validator('.js-form', function () {
     </tr>
     <tr>
       <td><strong>same(name)</strong></td>
-      <td>相同</td>
+      <td>相同，和表单中name字段相同值，例如重复密码</td>
     </tr>
     <tr>
       <td><strong>reg(regRule)</strong></td>
@@ -621,6 +657,14 @@ new Validator('.js-form', function () {
     <tr>
       <td><strong>gtenum(number)</strong></td>
       <td>大于等于number值</td>
+    </tr>
+    <tr>
+      <td><strong>ltnum(number)</strong></td>
+      <td>小于number值</td>
+    </tr>
+    <tr>
+      <td><strong>ltenum(number)</strong></td>
+      <td>小于等于number值</td>
     </tr>
   </tbody>
 </table>
