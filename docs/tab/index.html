@@ -251,7 +251,7 @@
     conActive: 'show',
     // 以上是默认配置
 
-    onChange(index, cb) {
+    onChange: function(index, cb) {
       console.log(index)
       cb();
     }
@@ -267,7 +267,7 @@
     <span class="na">conActive</span><span class="p">:</span> <span class="dl">'</span><span class="s1">show</span><span class="dl">'</span><span class="p">,</span>
     <span class="c1">// 以上是默认配置</span>
 
-    <span class="nx">onChange</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">onChange</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
       <span class="nx">cb</span><span class="p">();</span>
     <span class="p">}</span>

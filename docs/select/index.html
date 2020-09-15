@@ -318,12 +318,16 @@
 <div class="bd-example" data-example-id="">
 <script>
   var Select = ui.Select;
-  new Select('.js-select');
+  window.onload = function () {
+    new Select('.js-select');
+  }
 </script>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
   <span class="kd">var</span> <span class="nx">Select</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">;</span>
-  <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-select</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <h4 id="settings">Settings</h4>
