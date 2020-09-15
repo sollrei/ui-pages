@@ -351,8 +351,43 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
+<h2 id="cascader">Cascader</h2>
+
+<div class="bd-example" data-example-id="">
+<div class="ui-control-wrap">
+  <input type="hidden" id="select-input" class="v-item" data-rules="required" data-msgs="请选择省市区" name="abc" />
+  <div id="area-select" class="ui-select ui-form-control" data-ajax="https://api.cooode.xyz/api2/koto/c-c1,https://api.cooode.xyz/api2/koto/c-c2,https://api.cooode.xyz/api2/koto/c-c3" data-level="3" data-input="#select-input">请选择省\市\区(县)</div>
+  <input type="hidden" name="city" value="" class="js-city-input" />
+</div>
+
+<script>
+var Cascader = ui.Cascader;
+
+new Cascader('#area-select', {
+  selectFinalFn: function(values) {
+    console.log(values)
+  }
+});
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-control-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"select-input"</span> <span class="na">class=</span><span class="s">"v-item"</span> <span class="na">data-rules=</span><span class="s">"required"</span> <span class="na">data-msgs=</span><span class="s">"请选择省市区"</span> <span class="na">name=</span><span class="s">"abc"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"area-select"</span> <span class="na">class=</span><span class="s">"ui-select ui-form-control"</span> <span class="na">data-ajax=</span><span class="s">"https://api.cooode.xyz/api2/koto/c-c1,https://api.cooode.xyz/api2/koto/c-c2,https://api.cooode.xyz/api2/koto/c-c3"</span> <span class="na">data-level=</span><span class="s">"3"</span> <span class="na">data-input=</span><span class="s">"#select-input"</span><span class="nt">&gt;</span>请选择省\市\区(县)<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"city"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"js-city-input"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">Cascader</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Cascader</span><span class="p">;</span>
+
+<span class="k">new</span> <span class="nx">Cascader</span><span class="p">(</span><span class="dl">'</span><span class="s1">#area-select</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">selectFinalFn</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
 <blockquote>
-  <p>可能会重构，或者整个重写，目前逻辑比较混乱</p>
+  <p>Select模块可能会重构，或者整个重写，目前逻辑比较混乱</p>
 </blockquote>
 
         </div>
