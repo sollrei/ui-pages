@@ -554,7 +554,7 @@ new Validator('.js-form', function () {
 <ul class="page-ul">
   <li>data-rules上有remote(远程验证)时需要把remote放在最后</li>
   <li>对checkbox和radio类型的需要在每个input上加v-item，但是rules和msg只用写第一个上面</li>
-  <li>name值为form中指定字段名称</li>
+  <li>远程验证inputName值为form中指定字段的name，远程验证会带上该字段的值，请求中的name为ajaxName</li>
 </ul>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"v-item"</span> <span class="na">data-rules=</span><span class="s">"rule1|rule2|..."</span> <span class="na">data-msgs=</span><span class="s">"msg1|msg2|..."</span> <span class="nt">/&gt;</span>
@@ -633,8 +633,8 @@ new Validator('.js-form', function () {
       <td>数字</td>
     </tr>
     <tr>
-      <td><strong>remote(url, name[ajaxName])</strong></td>
-      <td>远程验证</td>
+      <td><strong>remote(url, ajaxName[inputName])</strong></td>
+      <td>远程验证 <code class="highlighter-rouge">remote(xxxx?xx=xx, mobile[newmobile])</code></td>
     </tr>
     <tr>
       <td><strong>same(name)</strong></td>
