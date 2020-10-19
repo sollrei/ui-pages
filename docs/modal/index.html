@@ -257,8 +257,8 @@
   var Layer = ui.Layer;
 
   l = new Layer({
-    position: 'bottom',  // default: right
-    width: '100%', // default: 640
+    position: 'right',  //  right | bottom
+    width: 600, // default: 640
     onOpen: function () {
       console.log('open')
     },
@@ -279,8 +279,8 @@
   <span class="kd">var</span> <span class="nx">Layer</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Layer</span><span class="p">;</span>
 
   <span class="nx">l</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Layer</span><span class="p">({</span>
-    <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bottom</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// default: right</span>
-    <span class="na">width</span><span class="p">:</span> <span class="dl">'</span><span class="s1">100%</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default: 640</span>
+    <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">//  right | bottom</span>
+    <span class="na">width</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span> <span class="c1">// default: 640</span>
     <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">},</span>
