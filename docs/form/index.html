@@ -619,14 +619,6 @@ new Validator('.js-form', function () {
       <td>护照</td>
     </tr>
     <tr>
-      <td><strong>not</strong></td>
-      <td>非</td>
-    </tr>
-    <tr>
-      <td><strong>or</strong></td>
-      <td>或,例or(email,mobile)</td>
-    </tr>
-    <tr>
       <td><strong>int</strong></td>
       <td>正整数</td>
     </tr>
@@ -635,8 +627,24 @@ new Validator('.js-form', function () {
       <td>数字</td>
     </tr>
     <tr>
+      <td><strong>not</strong></td>
+      <td>非</td>
+    </tr>
+    <tr>
+      <td><strong>or</strong></td>
+      <td>或,例or(email,mobile)</td>
+    </tr>
+    <tr>
+      <td><strong>max</strong></td>
+      <td>对复选框是最多选中个数，其他类似maxlength</td>
+    </tr>
+    <tr>
+      <td><strong>min</strong></td>
+      <td>对复选框是最少选中个数，其他类似minlength</td>
+    </tr>
+    <tr>
       <td><strong>remote(url, ajaxName[inputName])</strong></td>
-      <td>远程验证 <code class="highlighter-rouge">remote(xxxx?xx=xx, mobile[newmobile])</code></td>
+      <td>远程验证 <code class="highlighter-rouge">remote(post:xxxx?xx=xx, mobile[newmobile])</code>，不写<code class="highlighter-rouge">post:</code>默认使用get方法</td>
     </tr>
     <tr>
       <td><strong>same(name)</strong></td>
