@@ -138,28 +138,6 @@
         <div class="page-code">
           <h1 id="form">Form</h1>
 
-<form class="ui-form" style="width: 500px">
-  <div class="form-group line">
-    <div class="form-label">email</div>
-    <div class="form-con">
-      <div class="ui-control-wrap">
-        <input type="text" class="ui-form-control transparent" placeholder="email" />
-      </div>
-    </div>
-  </div>
-  <div class="form-group line">
-    <div class="form-label">name</div>
-    <div class="form-con">
-      <div class="ui-control-wrap">
-        <input type="text" class="ui-form-control transparent" placeholder="name" />
-      </div>
-    </div>
-  </div>
-  
-</form>
-
-<h2 id="validator">Validator</h2>
-
 <form action="https://api.cooode.xyz/api2/star-success-demo" method="post" class="ui-form js-form" autocomplete="off">
   <div class="form-group">
     <div class="form-label">required：</div>
@@ -377,7 +355,7 @@
   </div>
 </form>
 
-<h2 id="javascript">JavaScript</h2>
+<h2 id="usage">Usage</h2>
 
 <div class="bd-example" data-example-id="">
 <script>
@@ -407,161 +385,225 @@ new Validator('.js-form', function () {
 <span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="nx">fields</span><span class="p">,</span> <span class="nx">option</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">[,</span> <span class="nx">errorCallback</span><span class="p">]);</span>
 </code></pre></div></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>参数</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>form</strong></td>
-      <td>表单元素</td>
-    </tr>
-    <tr>
-      <td><strong>option</strong></td>
-      <td>配置，可选参数</td>
-    </tr>
-    <tr>
-      <td><strong>fields</strong></td>
-      <td>验证项，数组，可选参数</td>
-    </tr>
-    <tr>
-      <td><strong>successCallback</strong></td>
-      <td>表单验证通过回调</td>
-    </tr>
-    <tr>
-      <td><strong>errorCallback</strong></td>
-      <td>验证没通过的回调，可选参数</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="parameters">Parameters</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>配置项</th>
-      <th>default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>wrapSelector</strong></td>
-      <td>.ui-control-wrap</td>
-      <td>相对定位元素，用于添加error样式和提示元素（绝对定位）</td>
-    </tr>
-    <tr>
-      <td><strong>validSelector</strong></td>
-      <td>.v-item</td>
-      <td>对该selector查找到的字段添加验证</td>
-    </tr>
-    <tr>
-      <td><strong>errorClass</strong></td>
-      <td>error</td>
-      <td>错误样式（添加到input和warpClass元素）</td>
-    </tr>
-    <tr>
-      <td><strong>successClass</strong></td>
-      <td>success</td>
-      <td>验证成功</td>
-    </tr>
-    <tr>
-      <td><strong>loadClass</strong></td>
-      <td>loading</td>
-      <td>远程验证中样式（添加到input和warpClass元素）</td>
-    </tr>
-    <tr>
-      <td><strong>separator</strong></td>
-      <td><code class="highlighter-rouge">|</code></td>
-      <td>rules和msgs分隔符</td>
-    </tr>
-    <tr>
-      <td><strong>realTime</strong></td>
-      <td>true</td>
-      <td>字段失去焦点时验证，如果是false就只在提交时验证</td>
-    </tr>
-    <tr>
-      <td><strong>shouldFresh</strong></td>
-      <td>false</td>
-      <td>如果表单项会动态修改，可以设为true，提交时会清空之前的数据并重新验证</td>
-    </tr>
-    <tr>
-      <td><strong>remoteLoading</strong></td>
-      <td>false</td>
-      <td>远程验证中显示loading样式</td>
-    </tr>
-    <tr>
-      <td><strong>scrollToError</strong></td>
-      <td>false</td>
-      <td>滚动到错误位置</td>
-    </tr>
-    <tr>
-      <td><strong>fetchSuccess</strong></td>
-      <td><code class="highlighter-rouge">res =&gt; res.code === 200</code></td>
-      <td>判断远程验证通过</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="form-1">form</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>验证项</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>name</strong></td>
-      <td>string</td>
-      <td>字段name</td>
-    </tr>
-    <tr>
-      <td><strong>rules</strong></td>
-      <td>string</td>
-      <td>规则，例如 <code class="highlighter-rouge">rules: 'required|email'</code></td>
-    </tr>
-    <tr>
-      <td><strong>msgs</strong></td>
-      <td>string</td>
-      <td>错误提示信息，例如 <code class="highlighter-rouge">msgs: '请填写邮箱|邮箱格式不正确'</code></td>
-    </tr>
-    <tr>
-      <td><strong>fn</strong></td>
-      <td>function</td>
-      <td>非必须，字段验证后执行，但是不会中断验证过程，参数为1.validator实例</td>
-    </tr>
-  </tbody>
-</table>
+<p>Type: <code class="highlighter-rouge">HTMLElement | Selector</code></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>cleanTips</strong></td>
-      <td>清除错误提示样式</td>
-    </tr>
-  </tbody>
-</table>
+<p>表单元素或者表单选择器，如果同一个页面有多个表单需要验证，需要对每个表单单独调用</p>
 
-<h3 id="在表单元素上添加验证规则">在表单元素上添加验证规则</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-form</span><span class="dl">'</span><span class="p">,</span> <span class="nx">successCallback</span><span class="p">);</span>
+<span class="c1">// 等于</span>
+<span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-form</span><span class="dl">'</span><span class="p">),</span> <span class="nx">successCallback</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="option">option</h3>
+
+<p>Type: <code class="highlighter-rouge">Object</code></p>
+
+<p>配置，可选参数，可以传null，详见 <a href="#option-1" class="ft-primary">option</a></p>
+
+<h3 id="fields">fields</h3>
+
+<p>Type: <code class="highlighter-rouge">Array</code></p>
+
+<p>验证项，可选参数，详见 <a href="#fields-1" class="ft-primary">fields</a></p>
+
+<h3 id="successcallback">successCallback</h3>
+
+<p>Type: <code class="highlighter-rouge">Function</code></p>
+
+<p>验证通过的回调函数</p>
+
+<h3 id="errorcallback">errorCallback</h3>
+
+<p>Type: <code class="highlighter-rouge">Function</code></p>
+
+<p>验证失败的回调函数，可选参数</p>
+
+<h2 id="option-1">option</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">wrapSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.ui-control-wrap</span><span class="dl">'</span>
+  <span class="c1">// ... </span>
+<span class="p">},</span> <span class="nx">successCallback</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div id="option-1"></div>
+
+<h3 id="wrapselector">wrapSelector</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">.ui-control-wrap</code></p>
+
+<p>相对定位元素，用于添加error样式和提示元素（绝对定位）</p>
+
+<h3 id="validselector">validSelector</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">.v-item</code></p>
+
+<p>对该selector查找到的字段添加验证</p>
+
+<h3 id="errorclass">errorClass</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">error</code></p>
+
+<p>错误样式（添加到input和warpClass元素）</p>
+
+<h3 id="successclass">successClass</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">success</code></p>
+
+<p>成功样式</p>
+
+<h3 id="loadclass">loadClass</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">loading</code></p>
+
+<p>远程验证中样式（添加到input和warpClass元素）</p>
+
+<h3 id="separator">separator</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>Default: <code class="highlighter-rouge">|</code></p>
+
+<p>rules和msgs分隔符，如果影响添加的正则规则可以进行修改</p>
+
+<h3 id="realtime">realTime</h3>
+
+<p>Type: <code class="highlighter-rouge">Boolean</code></p>
+
+<p>Default: <code class="highlighter-rouge">true</code></p>
+
+<p>字段失去焦点时验证，如果是false就只在提交时验证</p>
+
+<h3 id="shouldfresh">shouldFresh</h3>
+
+<p>Type: <code class="highlighter-rouge">Boolean</code></p>
+
+<p>Default: <code class="highlighter-rouge">false</code></p>
+
+<p>如果表单项会动态修改，可以设为<code class="highlighter-rouge">true</code>，提交时会重新验证</p>
+
+<h3 id="remoteloading">remoteLoading</h3>
+
+<p>Type: <code class="highlighter-rouge">Boolean</code></p>
+
+<p>Default: <code class="highlighter-rouge">false</code></p>
+
+<p>远程验证中显示loading样式</p>
+
+<h3 id="scrolltoerror">scrollToError</h3>
+
+<p>Type: <code class="highlighter-rouge">Boolean</code></p>
+
+<p>Default: <code class="highlighter-rouge">false</code></p>
+
+<p>出现错误项时，滚动定位到错误位置</p>
+
+<h3 id="fetchsuccess">fetchSuccess</h3>
+
+<p>Type: <code class="highlighter-rouge">Function</code></p>
+
+<p>Default: <code class="highlighter-rouge">res =&gt; res.code === 200</code></p>
+
+<p>判断远程验证通过</p>
+
+<h2 id="fields-1">fields</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Validator</span><span class="p">(</span>
+  <span class="c1">// form</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">),</span> 
+  <span class="c1">// fields</span>
+  <span class="p">[{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">email</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="dl">'</span><span class="s1">required|email</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">msgs</span><span class="p">:</span> <span class="dl">'</span><span class="s1">请填写邮箱|邮箱格式不正确</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">fn</span><span class="p">(</span><span class="nx">valid</span><span class="p">,</span> <span class="nx">filed</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// do ...</span>
+    <span class="p">}</span>
+  <span class="p">}],</span>
+  <span class="c1">// option</span>
+  <span class="p">{</span> <span class="na">wrapSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.ui-control-wrap</span><span class="dl">'</span> <span class="p">},</span> 
+  <span class="c1">// successCallback</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="name">name</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>字段name</p>
+
+<h3 id="rules">rules</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>规则，用<code class="highlighter-rouge">|</code>分隔，需要修改分隔符号可以使用 <a href="#separator" class="ft-primary">separator</a></p>
+
+<h3 id="msgs">msgs</h3>
+
+<p>Type: <code class="highlighter-rouge">String</code></p>
+
+<p>错误提示信息，使用<code class="highlighter-rouge">|</code>分隔，需要和rules一一对应；rules和msgs的分隔符保持一致</p>
+
+<h3 id="fn">fn</h3>
+
+<p>Type: <code class="highlighter-rouge">Function</code></p>
+
+<p>非必须，字段验证后执行，<span class="ft-warn">不会中断验证过程</span> ；参数为 1.validator实例 2.验证项</p>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="cleantips">cleanTips</h3>
+
+<p>Type: <code class="highlighter-rouge">Function</code></p>
+
+<p>清除错误提示样式</p>
+
+<h3 id="showerrortip">showErrorTip</h3>
+
+<p>显示某一项的错误提示【提示的项目是需要验证的项目】</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">valid</span><span class="p">.</span><span class="nx">showErrorTip</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">message</span><span class="p">[,</span> <span class="nx">tipElement</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>参数：</p>
+
+<p><strong>element</strong>  <code class="highlighter-rouge">String | HTMLElement</code>  错误项的name值，或者错误项的html元素</p>
+
+<p><strong>message</strong>  <code class="highlighter-rouge">String</code> 错误信息</p>
+
+<p><strong>tipElement</strong> <code class="highlighter-rouge">HTMLElement</code> 可选参数，提示元素</p>
+
+<h2 id="直接在表单元素上添加验证规则">直接在表单元素上添加验证规则</h2>
 
 <ul class="page-ul">
   <li>data-rules上有remote(远程验证)时需要把remote放在最后</li>
   <li>对checkbox和radio类型的需要在每个input上加v-item，但是rules和msg只用写第一个上面</li>
   <li>远程验证inputName值为form中指定字段的name，远程验证会带上该字段的值，请求中的name为ajaxName</li>
+  <li>需要在特定的元素位置显示错误提示，可以使用data-tip，可能需要修改相应的样式</li>
+  <li>如果验证元素有id，错误提示会增加<code class="highlighter-rouge">v-tip-${element.id}</code>的样式，可以对特定项错误提示做修改</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"v-item"</span> <span class="na">data-rules=</span><span class="s">"rule1|rule2|..."</span> <span class="na">data-msgs=</span><span class="s">"msg1|msg2|..."</span> <span class="nt">/&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"v-error-tip error-span"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"v-item"</span> <span class="na">data-rules=</span><span class="s">"rule1|rule2|..."</span> <span class="na">data-msgs=</span><span class="s">"msg1|msg2|..."</span> <span class="na">data-tip=</span><span class="s">".error-span"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
+
+<h2 id="valid-rules">Valid Rules</h2>
 
 <table>
   <thead>
@@ -653,7 +695,7 @@ new Validator('.js-form', function () {
     </tr>
     <tr>
       <td><strong>reg(regRule)</strong></td>
-      <td>正则，因为用了竖线做了分隔符，所以规则中不能用竖线</td>
+      <td>正则，因为用了竖线做了分隔符，所以规则中不能用竖线，或者需要改<a href="#separator" class="ft-primary">separator</a></td>
     </tr>
     <tr>
       <td><strong>gt(name)</strong></td>
