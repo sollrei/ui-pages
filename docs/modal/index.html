@@ -261,7 +261,7 @@
 <script>
   var Layer = ui.Layer;
 
-  l = new Layer({
+  lay = new Layer({
     position: 'right',  //  right | bottom
     width: 600, // default: 640
     onOpen: function () {
@@ -273,7 +273,7 @@
   });
 
   document.querySelector('.js-layer-btn').addEventListener('click', function () {
-    l.show({
+    lay.show({
       title: 'Title',
       content: '<div class="ui-column stretch"><div class="layer-main plr-24">content here</div><div class="layer-footer"><button class="ui-button primary mr-16" type="submit">保存</button><button class="ui-button" type="button" data-layer-close>取消</button></div></div>'
     });
@@ -283,7 +283,7 @@
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
   <span class="kd">var</span> <span class="nx">Layer</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Layer</span><span class="p">;</span>
 
-  <span class="nx">l</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Layer</span><span class="p">({</span>
+  <span class="nx">lay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Layer</span><span class="p">({</span>
     <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">//  right | bottom</span>
     <span class="na">width</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span> <span class="c1">// default: 640</span>
     <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -295,9 +295,56 @@
   <span class="p">});</span>
 
   <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-layer-btn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">l</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+    <span class="nx">lay</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
       <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Title</span><span class="dl">'</span><span class="p">,</span>
       <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div class="ui-column stretch"&gt;&lt;div class="layer-main plr-24"&gt;content here&lt;/div&gt;&lt;div class="layer-footer"&gt;&lt;button class="ui-button primary mr-16" type="submit"&gt;保存&lt;/button&gt;&lt;button class="ui-button" type="button" data-layer-close&gt;取消&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+<p><button class="ui-button primary js-layer-bottom-btn">Layer Bottom</button></p>
+
+<div class="bd-example" data-example-id="">
+<script>
+  var Layer = ui.Layer;
+
+  l = new Layer({
+    position: 'bottom',
+    width: '100vw',
+    onOpen: function () {
+      console.log('open')
+    },
+    onClose: function() {
+      console.log('close')
+    }
+  });
+
+  document.querySelector('.js-layer-bottom-btn').addEventListener('click', function () {
+    l.show({
+      title: 'Title',
+      content: 'hello world'
+    });
+  });
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Layer</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Layer</span><span class="p">;</span>
+
+  <span class="nx">l</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Layer</span><span class="p">({</span>
+    <span class="na">position</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bottom</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">width</span><span class="p">:</span> <span class="dl">'</span><span class="s1">100vw</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">onOpen</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">onClose</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-layer-bottom-btn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">l</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Title</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
