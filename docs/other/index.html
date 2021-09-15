@@ -105,7 +105,7 @@
   <!-- <h4 class="pl-16 mt-8 ft-gray">Navigation</h4> -->
   <ul class="ft-content">
     
-    <li class="active"><a href="/ui-pages/docs/crumbs/"><span>Crumbs</span></a></li>
+    <li class=""><a href="/ui-pages/docs/crumbs/"><span>Crumbs</span></a></li>
     
     <li class=""><a href="/ui-pages/docs/menu/"><span>Menu</span></a></li>
     
@@ -130,7 +130,7 @@
     
     <li class=""><a href="/ui-pages/docs/toast/"><span>Toast</span></a></li>
     
-    <li class=""><a href="/ui-pages/docs/other/"><span>Other</span></a></li>
+    <li class="active"><a href="/ui-pages/docs/other/"><span>Other</span></a></li>
     
   </ul>
   
@@ -140,24 +140,120 @@
       <main class="main ui-row" aria-label="content">
         
         <div class="page-code">
-          <h1 id="crumbs">Crumbs</h1>
+          <h2 id="lightbox">Lightbox</h2>
+
+<style>
+  .demo-wrapper {
+    display: flex;
+  }
+
+  .demo-wrapper .item {
+    margin-right: 10px;
+  }
+
+  .item img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+</style>
 
 <div class="bd-example" data-example-id="">
-<div class="ui-path">
-  <a class="link" href="#">一级页面</a>
-  <span class="line">/</span>
-  <a class="link" href="#">二级页面</a>
-  <span class="line">/</span>
-  <span>页面</span>
+<div class="demo-wrapper">
+  <div class="item" data-src="https://picsum.photos/id/227/400/300">
+    <img src="https://img-i.westarcloud.com/2021/0824/k37azdst7byb4e22014503.png" alt="" />
+  </div>
+  <div class="item" data-src="https://img-i.westarcloud.com/2021/0824/e33s3yb6486i7r9j014503.png">
+    <img src="https://img-i.westarcloud.com/2021/0824/e33s3yb6486i7r9j014503.png" alt="" />
+  </div>
+  <div class="item" data-src="https://picsum.photos/id/137/1000/1000">
+    <img src="https://img-i.westarcloud.com/2021/0824/k37azdst7byb4e22014503.png" alt="" />
+  </div>
 </div>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-path"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>一级页面<span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"line"</span><span class="nt">&gt;</span>/<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>二级页面<span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"line"</span><span class="nt">&gt;</span>/<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span&gt;</span>页面<span class="nt">&lt;/span&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"demo-wrapper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">data-src=</span><span class="s">"https://picsum.photos/id/227/400/300"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://img-i.westarcloud.com/2021/0824/k37azdst7byb4e22014503.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">data-src=</span><span class="s">"https://img-i.westarcloud.com/2021/0824/e33s3yb6486i7r9j014503.png"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://img-i.westarcloud.com/2021/0824/e33s3yb6486i7r9j014503.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">data-src=</span><span class="s">"https://picsum.photos/id/137/1000/1000"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://img-i.westarcloud.com/2021/0824/k37azdst7byb4e22014503.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="bd-example" data-example-id="">
+<script>
+  var Lightbox = ui.Lightbox;
+  
+  new Lightbox('.demo-wrapper', {
+    selector: '.item'
+  })
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Lightbox</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Lightbox</span><span class="p">;</span>
+  
+  <span class="k">new</span> <span class="nx">Lightbox</span><span class="p">(</span><span class="dl">'</span><span class="s1">.demo-wrapper</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.item</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+<h2 id="scroll">Scroll</h2>
+
+<style>
+  .scroll-wrap {
+    padding-left: 20px;
+    height: 154px;
+    overflow: hidden;
+    background: #fafafa;
+  }
+  .scroll-wrap li {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="bd-example" data-example-id="">
+<div class="scroll-wrap">
+  <div class="wrapper">
+    <ul>
+      <li>文字文字1</li>
+      <li>文字文字2</li>
+      <li>文字文字3</li>
+      <li>文字文字4</li>
+      <li>文字文字5</li>
+      <li>文字文字6</li>
+      <li>文字文字7</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var Scroll = ui.Scroll;
+  new Scroll('.scroll-wrap ul')
+</script>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"scroll-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字1<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字2<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字3<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字4<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字5<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字6<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>文字文字7<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Scroll</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Scroll</span><span class="p">;</span>
+  <span class="k">new</span> <span class="nx">Scroll</span><span class="p">(</span><span class="dl">'</span><span class="s1">.scroll-wrap ul</span><span class="dl">'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
 
         </div>
         <div class="page-menu-wrap">
